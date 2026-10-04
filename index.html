@@ -86,8 +86,8 @@ h2{font-weight:900;font-size:clamp(1.8rem,4.2vw,2.7rem);line-height:1.3;letter-s
 .purpose p+p{margin-top:1.1em}
 .purpose .kk{color:var(--red);font-weight:900}
 
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:860px){.grid3{grid-template-columns:1fr}}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
 .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px 28px}
 .card .no{font-family:Inter,sans-serif;font-weight:900;font-size:.9rem;color:#fff;background:var(--red);width:38px;height:38px;border-radius:10px;display:grid;place-items:center}
 .card h3{font-size:1.18rem;font-weight:800;margin:18px 0 8px}
@@ -194,7 +194,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   <div class="wrap">
     <div class="label">ACTIVITY</div>
     <h2>活動内容</h2>
-    <div class="grid3">
+    <div class="grid2">
       <div class="card">
         <div class="no">01</div>
         <h3>定期稽古</h3>
@@ -202,40 +202,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
       </div>
       <div class="card">
         <div class="no">02</div>
-        <h3>合宿</h3>
-        <p>稽古・会内の団体戦・サウナ・BBQまで詰め込んだ合宿を開催しています。</p>
-      </div>
-      <div class="card">
-        <div class="no">03</div>
-        <h3>交流</h3>
-        <p>起業家、投資家、事業会社の方など、立場の違うメンバーが稽古のあとも語り合います。</p>
+        <h3>懇親会・合宿・出稽古</h3>
+        <p>定期的に飲み会や剣道合宿を開催しています。各企業剣道部への出稽古なども積極的に実施しています。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap record-box">
-    <div>
-      <div class="label">RECORD</div>
-      <h2>地獄の秋合宿 2026</h2>
-      <p>2026年10月3日〜4日、那須で開催しました。株式会社Hataraba様の全面協力のもと、稽古・団体戦・サウナ・BBQの2日間を過ごしました。</p>
-      <div class="tags">
-        <span class="tag">那須町スポーツセンター</span><span class="tag">剣友会内団体戦</span><span class="tag">協力：株式会社Hataraba</span>
-      </div>
-    </div>
-    <ul class="timeline">
-      <li><b>Day1</b>渋谷集合・出発</li>
-      <li><b>14:30</b>稽古（基本稽古・追い込み）</li>
-      <li><b>16:00</b>練習試合・剣友会内団体戦</li>
-      <li><b>17:30</b>サウナタイム</li>
-      <li><b>19:30</b>BBQ &amp; 懇親会</li>
-      <li><b>Day2</b>東京へ戻り・解散</li>
-    </ul>
-  </div>
-</section>
-
-<section id="info" class="sub">
+<section id="info">
   <div class="wrap">
     <div class="label">INFORMATION</div>
     <h2>参加概要</h2>
@@ -269,7 +243,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   </div>
 </section>
 
-<section id="faq">
+<section id="faq" class="sub">
   <div class="wrap">
     <div class="label">FAQ</div>
     <h2>よくある質問</h2>
