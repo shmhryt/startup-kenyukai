@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スタートアップ剣友会</title>
+<meta name="description" content="スタートアップに関わる人たちの剣友会。毎月第2・第4月曜 20:00〜、港区スポーツセンターで稽古しています。">
+<meta property="og:title" content="スタートアップ剣友会（スタ剣）">
+<meta property="og:description" content="スタートアップに関わる人たちの剣友会。毎月第2・第4月曜 20:00〜、港区スポーツセンターで稽古しています。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#e8202a;
+  --red-deep:#b8121b;
+  --red-soft:#fdeceb;
+  --bg:#ffffff;
+  --bg-sub:#f7f7f8;
+  --text:#111114;
+  --muted:#5f6370;
+  --line:#e7e7ea;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Inter","Noto Sans JP",system-ui,sans-serif;line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased;font-feature-settings:"palt"}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.nb{display:inline-block}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:-.01em}
+.logo-mark{width:30px;height:30px;border-radius:8px;background:var(--red);color:#fff;display:grid;place-items:center;font-size:.95rem;font-weight:900}
+.logo small{font-family:Inter,sans-serif;font-weight:600;font-size:.7rem;color:var(--muted);letter-spacing:.08em;margin-left:2px}
+nav{display:flex;align-items:center;gap:26px}
+nav a{text-decoration:none;font-size:.88rem;font-weight:500;color:var(--muted)}
+nav a:hover{color:var(--text)}
+nav .pill{background:var(--text);color:#fff;padding:8px 18px;border-radius:999px}
+nav .pill:hover{color:#fff;background:var(--red)}
+@media (max-width:760px){nav .hide-sp{display:none}.logo small{display:none}}
+.logo,nav a{white-space:nowrap}
+@media (max-width:760px){.hero{padding:96px 0 80px}.hero::before{width:220px;height:220px;right:-110px;top:-110px}.hero::after{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:120px 0 110px}
+.hero::before{content:"";position:absolute;right:-180px;top:-160px;width:620px;height:620px;border-radius:50%;background:var(--red);opacity:.95}
+.hero::after{content:"";position:absolute;right:120px;top:300px;width:180px;height:180px;border-radius:50%;border:2px solid var(--red);opacity:.5}
+.hero .wrap{position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.12em;color:var(--red);background:var(--red-soft);padding:6px 14px;border-radius:999px;margin-bottom:28px}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red)}
+.hero h1{font-weight:900;font-size:clamp(2.6rem,8vw,5.4rem);line-height:1.12;letter-spacing:-.03em;max-width:760px}
+.hero h1 .r{color:var(--red)}
+.hero .lead{margin-top:28px;max-width:520px;font-size:1.05rem;color:var(--muted)}
+.cta-row{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:700;text-decoration:none;font-size:.96rem;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn .arw{font-family:Inter,sans-serif}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep)}
+.btn-line{border:1.5px solid var(--text);color:var(--text);background:#fff}
+.btn-white{background:#fff;color:var(--red)}
+.btn-outline-w{border:1.5px solid rgba(255,255,255,.7);color:#fff}
+
+/* stats strip */
+.strip{background:var(--text);color:#fff}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.strip .item{padding:26px 20px;border-left:1px solid rgba(255,255,255,.12)}
+.strip .item:first-child{border-left:none}
+.strip .k{font-size:.74rem;letter-spacing:.14em;color:rgba(255,255,255,.55);font-weight:600}
+.strip .v{font-weight:800;font-size:1.05rem;margin-top:4px}
+@media (max-width:760px){.strip .wrap{grid-template-columns:1fr}.strip .item{border-left:none;border-top:1px solid rgba(255,255,255,.12);padding:18px 4px}.strip .item:first-child{border-top:none}}
+
+/* sections */
+section{padding:100px 0}
+.label{font-family:Inter,sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.2em;color:var(--red)}
+h2{font-weight:900;font-size:clamp(1.8rem,4.2vw,2.7rem);line-height:1.3;letter-spacing:-.02em;margin:10px 0 32px}
+.sub{background:var(--bg-sub)}
+
+.purpose{min-height:120px;border:1.5px dashed var(--line);border-radius:16px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:860px){.grid3{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px 28px}
+.card .no{font-family:Inter,sans-serif;font-weight:900;font-size:.9rem;color:#fff;background:var(--red);width:38px;height:38px;border-radius:10px;display:grid;place-items:center}
+.card h3{font-size:1.18rem;font-weight:800;margin:18px 0 8px}
+.card p{color:var(--muted);font-size:.94rem}
+
+/* record */
+.record-box{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
+@media (max-width:860px){.record-box{grid-template-columns:1fr;gap:28px}}
+.record-box p{color:var(--muted)}
+.tags{margin-top:20px}
+.tag{display:inline-block;font-size:.8rem;font-weight:500;background:var(--red-soft);color:var(--red-deep);padding:4px 12px;border-radius:999px;margin:0 6px 8px 0}
+.timeline{list-style:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 28px}
+.timeline li{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
+.timeline li:last-child{border-bottom:none}
+.timeline b{font-family:Inter,sans-serif;font-weight:800;color:var(--red);min-width:52px}
+
+/* info */
+.info{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:760px){.info{grid-template-columns:1fr}}
+.info .box{border:1px solid var(--line);border-radius:18px;padding:26px 28px}
+.info .box.wide{grid-column:1/-1}
+.info .k{font-size:.8rem;font-weight:700;color:var(--red);letter-spacing:.06em}
+.info .v{font-weight:800;font-size:1.2rem;margin-top:6px;line-height:1.5}
+.info .note{color:var(--muted);font-size:.9rem;margin-top:6px}
+.checks{list-style:none;margin-top:14px;display:grid;gap:10px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.checks li::before{content:"";flex:none;margin-top:6px;width:18px;height:18px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/11px no-repeat}
+
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:Inter,sans-serif;font-weight:800;color:var(--red);font-size:1.2rem;line-height:1.4}
+details[open] summary::after{content:"−"}
+details p{margin-top:10px;color:var(--muted)}
+
+/* join */
+.join{background:var(--red);color:#fff;text-align:center;position:relative;overflow:hidden}
+.join::before{content:"";position:absolute;left:-120px;bottom:-200px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.08)}
+.join .wrap{position:relative}
+.join .label{color:rgba(255,255,255,.75)}
+.join h2{color:#fff}
+.join p{opacity:.9;max-width:560px;margin:0 auto}
+.join .cta-row{justify-content:center}
+.member{margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.25)}
+.member small{display:block;opacity:.75;margin-top:12px;font-size:.8rem}
+
+footer{background:var(--text);color:rgba(255,255,255,.55);font-size:.8rem;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><span class="logo-mark">剣</span>スタ剣<small>STARTUP KENYUKAI</small></a>
+    <nav>
+      <a class="hide-sp" href="#purpose">目的</a>
+      <a class="hide-sp" href="#activity">活動</a>
+      <a class="hide-sp" href="#info">参加概要</a>
+      <a class="pill" href="#join">参加する</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">STARTUP KENYUKAI</span>
+    <h1><span class="nb">スタートアップ</span><span class="nb">剣友会</span></h1>
+    <p class="lead">スタートアップ剣友会（スタ剣）は、スタートアップに関わる人たちが集まり、竹刀を握って本気でぶつかる剣友会です。</p>
+    <div class="cta-row">
+      <a class="btn btn-red" href="#join">参加を申し込む <span class="arw">→</span></a>
+      <a class="btn btn-line" href="#info">参加概要を見る</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="item"><div class="k">SCHEDULE</div><div class="v">毎月 第2・第4月曜 20:00〜</div></div>
+    <div class="item"><div class="k">PLACE</div><div class="v">港区スポーツセンター 第二武道場</div></div>
+    <div class="item"><div class="k">FEE</div><div class="v">道場利用料を割り勘</div></div>
+  </div>
+</div>
+
+<section id="purpose">
+  <div class="wrap">
+    <div class="label">PURPOSE</div>
+    <h2>活動の目的</h2>
+    <div class="purpose"><!-- 活動の目的：後日記入 --></div>
+  </div>
+</section>
+
+<section id="activity" class="sub">
+  <div class="wrap">
+    <div class="label">ACTIVITY</div>
+    <h2>活動内容</h2>
+    <div class="grid3">
+      <div class="card">
+        <div class="no">01</div>
+        <h3>定期稽古</h3>
+        <p>毎月 第2・第4月曜の20時から、港区スポーツセンターで稽古します。仕事終わりに、短時間で集中して打ち込みます。</p>
+      </div>
+      <div class="card">
+        <div class="no">02</div>
+        <h3>合宿</h3>
+        <p>稽古・会内の団体戦・サウナ・BBQまで詰め込んだ合宿を開催しています。</p>
+      </div>
+      <div class="card">
+        <div class="no">03</div>
+        <h3>交流</h3>
+        <p>起業家、投資家、事業会社の方など、立場の違うメンバーが稽古のあとも語り合います。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap record-box">
+    <div>
+      <div class="label">RECORD</div>
+      <h2>地獄の秋合宿 2026</h2>
+      <p>2026年10月3日〜4日、那須で開催しました。株式会社Hataraba様の全面協力のもと、稽古・団体戦・サウナ・BBQの2日間を過ごしました。</p>
+      <div class="tags">
+        <span class="tag">那須町スポーツセンター</span><span class="tag">剣友会内団体戦</span><span class="tag">協力：株式会社Hataraba</span>
+      </div>
+    </div>
+    <ul class="timeline">
+      <li><b>Day1</b>渋谷集合・出発</li>
+      <li><b>14:30</b>稽古（基本稽古・追い込み）</li>
+      <li><b>16:00</b>練習試合・剣友会内団体戦</li>
+      <li><b>17:30</b>サウナタイム</li>
+      <li><b>19:30</b>BBQ &amp; 懇親会</li>
+      <li><b>Day2</b>東京へ戻り・解散</li>
+    </ul>
+  </div>
+</section>
+
+<section id="info" class="sub">
+  <div class="wrap">
+    <div class="label">INFORMATION</div>
+    <h2>参加概要</h2>
+    <div class="info">
+      <div class="box">
+        <div class="k">日時</div>
+        <div class="v">毎月 第2・第4月曜日<br>20:00〜</div>
+      </div>
+      <div class="box">
+        <div class="k">場所</div>
+        <div class="v">港区スポーツセンター<br>第二武道場</div>
+      </div>
+      <div class="box">
+        <div class="k">会費</div>
+        <div class="v">道場利用料を割り勘</div>
+      </div>
+      <div class="box">
+        <div class="k">入会方法</div>
+        <div class="v">既存メンバーからの紹介制</div>
+        <div class="note">紹介者がいない方も、下のフォームからご相談ください。</div>
+      </div>
+      <div class="box wide">
+        <div class="k">参加対象</div>
+        <ul class="checks">
+          <li>スタートアップ企業を経営している方、またはスタートアップ企業に所属している方</li>
+          <li>VC・CVC・新規事業・金融機関などの関係者</li>
+          <li>スタートアップに関わりたい方</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="label">FAQ</div>
+    <h2>よくある質問</h2>
+    <details><summary>紹介者がいなくても参加できますか？</summary><p>基本は既存メンバーからの紹介制ですが、まずはフォームからご連絡ください。運営からご案内します。</p></details>
+    <details><summary>会費はいくらですか？</summary><p>その回の道場利用料を参加者で割り勘します。</p></details>
+    <details><summary>まずは見学だけでもいいですか？</summary><p>もちろんです。フォームからお気軽にご連絡ください。</p></details>
+  </div>
+</section>
+
+<section id="join" class="join">
+  <div class="wrap">
+    <div class="label">JOIN</div>
+    <h2>まずは一度、稽古へ。</h2>
+    <p>参加・見学のご希望やお問い合わせは、フォームから受け付けています。</p>
+    <div class="cta-row">
+      <a class="btn btn-white" href="#" data-todo="入会フォームURL">フォームから申し込む <span class="arw">→</span></a>
+    </div>
+    <div class="member">
+      <a class="btn btn-outline-w" href="#" data-todo="会員NotionページURL">会員ページ（Notion）</a>
+      <small>※ 会員ページの閲覧には招待が必要です</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>© 2026 スタートアップ剣友会</span><span>STARTUP KENYUKAI</span></div>
+</footer>
+
+</body>
+</html>
